@@ -1,0 +1,223 @@
+.example-container {
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.example-sidenav-content {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+}
+.example-sidenav {
+  color: #fff !important;
+}
+.full-width {
+  width: 100%;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+.logo {
+  width: 121px;
+  height: 32px;
+  margin-right: 29px;
+}
+.example-sidenav {
+  background: #0f172a;
+  padding: 18px;
+}
+.profile-icon {
+  color: #8391a6;
+}
+.bw-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #3be58e;
+  line-height: 18;
+  position: absolute;
+}
+.bw-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  opacity: 0.5;
+  background-color: #2c3243;
+  position: relative;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.username {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.email-add {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  color: #8391a6;
+}
+.example-toolbar {
+  background-color: #ffffff;
+  text-align: right;
+  box-shadow: 0px 4px 14.4px 1.6px rgb(12 15 25 / 9%);
+  justify-content: space-between;
+}
+.shadow {
+  box-shadow: 0px 4px 14.4px 1.6px rgb(12 15 25 / 9%);
+  margin: 30px;
+  width: 100%;
+}
+.object-cover {
+  height: 20rem !important;
+  object-fit: cover !important;
+  width: 100%;
+  vertical-align: top;
+}
+.edit-btn {
+  border-radius: 20px;
+  color: #252b42;
+  background-color: #2af0a3;
+}
+.bw-circle-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 55px;
+  opacity: 1;
+  background-color: #2c3243;
+  position: relative;
+  bottom: 3rem;
+  border: 5px solid #fff;
+}
+.bw-text-inner {
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+  line-height: 18;
+  position: absolute;
+}
+.profile-text {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: #252b42;
+}
+.pro-member {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+.example-large-box {
+  height: 600px;
+  width: 100%;
+}
+.about-card {
+  width: 335px;
+  height: 224px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 14.4px 1.6px rgba(12, 15, 25, 0.09);
+  margin: 30px;
+}
+.reset-card {
+  width: 371px;
+  height: 401px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 14.4px 1.6px rgba(12, 15, 25, 0.09);
+  margin: 30px;
+}
+.mat-form-field {
+  width: 100%;
+}
+.reset-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.name {
+  font-family: Inter;
+  font-size: 16px;
+  text-align: left;
+  color: #252b42;
+  font-weight: 600;
+}
+.email {
+  display: flex;
+  font-family: Inter;
+  font-size: 14px;
+  text-align: left;
+  color: #252b42;
+}
+.email .mat-icon {
+  color: #64748b;
+  margin-right: 5px;
+}
+.card-innet {
+  padding: 13px;
+}
+.menu-list div {
+  color: #fff;
+}
+
+.menu-list .mat-icon {
+  color: #fff;
+  // background-color: #fff;
+}
+
+.mat-tab-label {
+  border-radius: 40px !important;
+}
+
+.tabHeading{
+  border-radius: 40px !important;
+}
+
+
+.no-content{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.note-txt{
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    max-width: 300px;
+    font-size: 12px;
+    font-family: 'Inter';
+    position: relative;
+    bottom: -12px;
+    font-weight: 500;
+    text-align: center;
+    color: indigo;
+}

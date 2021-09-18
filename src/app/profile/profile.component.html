@@ -1,0 +1,141 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Welcome, Bruce Wayne</h1>
+  </mat-toolbar>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div fxLayout="column" class="center-block">
+      <div fxLayout="row" fxFlexAlign="center center">
+        <div fxFlex="80">
+          <img class="logo" src="../../assets/img/logo.png">
+        </div>
+        <div fxFlex="20">
+          <mat-icon class="profile-icon">account_circle</mat-icon>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" class="mt-20">
+        <div class="bw-circle mb-3">
+          <span class="bw-text">BW</span>
+        </div>
+        <div>
+          <p class="username">Bruce Wayne </p>
+          <p class="email-add">bruce_wayne@gmail.com </p>
+        </div>
+      </div>
+      <div>
+        <mat-list class="menu-list">
+          <div mat-subheader>Menu</div>
+          <mat-list-item>
+            <mat-icon mat-list-icon>dashboard</mat-icon>
+            <div mat-line>Dashboard</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>person_pin</mat-icon>
+            <div mat-line>Profile</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>view_week</mat-icon>
+            <div mat-line>Organisations</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>pie_chart</mat-icon>
+            <div mat-line>Scores</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>attach_money</mat-icon>
+            <div mat-line>Subscription</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>exit_to_app</mat-icon>
+            <div mat-line>Logout</div>
+          </mat-list-item>
+
+        </mat-list>
+      </div>
+
+
+    </div>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+      <mat-card class="shadow">
+        <div fxLayout="column">
+            <div><img src="assets/img/cover.jpg" alt="Cover image" class="object-cover"></div>
+            <div fxLayout="row"  fxLayoutAlign="start center">
+                <div fxLayout="column" fxFlex="10"></div>
+                <div fxLayout="column" fxFlex="10">
+                    <div class="bw-circle-inner">
+                        <span class="bw-text-inner">BW</span>
+                    </div>
+                </div>
+
+              <div fxLayout="column" fxFlex="70">
+                    <div class="profile-text">Bruce Wayne</div>
+                    <div class="pro-member">Pro member</div>
+              </div>
+              <div fxLayout="column" fxFlex="10" >
+                <button mat-button class="edit-btn">Edit Profile</button>
+             </div>
+
+            </div>
+          </div>
+      </mat-card>
+  </div>
+  <div>
+    <mat-tab-group >
+        <mat-tab class="personal-tab tabHeading" label="Personal Information">
+            <div fxLayout="row" class="example-large-box mat-elevation-z4">
+              <mat-card class="about-card">
+                <mat-card-header>
+                  <mat-card-title>About Me</mat-card-title>
+                </mat-card-header>
+                <div class="card-innet">
+                <h4 class="name">Name</h4>
+                <p class="email"> <mat-icon >person</mat-icon>BruceWayne</p>
+                <h4 class="name">Email Address</h4>
+                <p class="email"><mat-icon>email</mat-icon>bruce_wayne@gmail.com</p>
+              </div>
+              </mat-card>
+              <mat-card class="reset-card" [formGroup]="formGroup" >
+                <mat-card-header>
+                  <mat-card-title>Reset Password</mat-card-title>
+                </mat-card-header>
+                <mat-form-field appearance="outline">
+                  <mat-label>Current Password</mat-label>
+                  <input matInput class="oldInput"  placeholder="Placeholder" formControlName="oldPass" >
+                  <mat-error *ngIf="password.hasError('required')">Current Password is required</mat-error>
+                  <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>New Password</mat-label>
+                  <input matInput class="newInput"  placeholder="Placeholder" formControlName="password" (input)="onPasswordInput()" >
+                  <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+                  <mat-error *ngIf="password.hasError('minlength')">Password must have at least {{minPw}} characters</mat-error>
+                  <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Confirm New Password</mat-label>
+                  <input matInput class="confirmInput"  formControlName="password2" (input)="onPasswordInput()" placeholder="Placeholder">
+                  <mat-error *ngIf="password2.hasError('required')">Please confirm your password</mat-error>
+                  <mat-error *ngIf="password2.invalid && !password2.hasError('required')">Passwords don't match</mat-error>
+                  <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                </mat-form-field>
+                <div class="reset-btn">
+                  <button mat-button class="edit-btn" [disabled]="!this.formGroup.valid" (click)="resetPassword()" > Reset Password </button>
+               </div>
+               <span class="note-txt" *ngIf="this.oldPassword =='admin1234' " >Note : Default Password is "admin1234" which is Saved in localStorge, this message will disappear after first password change</span>
+              </mat-card>
+
+            </div>
+          </mat-tab>
+        <mat-tab class="tabHeading" label="Payment Information">
+          <div class="example-large-box mat-elevation-z4">
+            <h2 class="no-content" >Content Coming Soon</h2>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+  </div>
+
+
+</mat-drawer-container>
